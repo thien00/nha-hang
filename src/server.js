@@ -1,3 +1,4 @@
+require('dotenv').config();
 import express from "express";
 import bodyParser from "body-parser";
 import viewEngine from "./configs/viewEngine";
@@ -17,5 +18,5 @@ webRoutes(app);
 let port = process.env.PORT || 8080;
 
 app.listen(port, () => {
-    console.log("App is running at the port : " + port);
-})
+    console.log(`App is running at the port ${port}`);
+});

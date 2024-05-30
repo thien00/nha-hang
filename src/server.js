@@ -1,11 +1,22 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 8080;
+require('dotenv').config();
+import express from "express";
+import bodyParser from "body-parser";
+import viewEngine from "./configs/viewEngine";
+import webRoutes from "./routes/web";
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+let app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+// config view Engine
+viewEngine(app);
+
+// config web routes
+webRoutes(app);
+
+
+let port = process.env.PORT || 8080;
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+    console.log(`App is running at the port ${port}`);
+});

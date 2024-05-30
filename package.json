@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --exec babel-node src/server.js"
+    "start": "nodemon --exec babel-node src/server.js"
   },
   "keywords": [
     "chatbot",
@@ -24,6 +24,6 @@
     "@babel/core": "^7.24.6",
     "@babel/node": "^7.24.6",
     "@babel/preset-env": "^7.24.6",
-    "nodemon": "^3.1.1"
+    "nodemon": "^3.1.2"
   }
 }
